@@ -1,5 +1,6 @@
 import Image from "next/image";
 import styles from "./page.module.css";
+import Login from "./components/login/Login";
 
 export default function Home() {
   return (
@@ -17,7 +18,7 @@ export default function Home() {
           <li>
             Get started by editing <code>src/app/page.tsx</code>.
           </li>
-          <li>Save and see your changes instantly.</li>
+          <li>Randall Fitness.</li>
         </ol>
 
         <div className={styles.ctas}>
@@ -90,6 +91,8 @@ export default function Home() {
           Go to nextjs.org →
         </a>
       </footer>
+      <Login />
     </div>
+
   );
 }
