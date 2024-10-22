@@ -1,59 +1,42 @@
-"use client"; // Add this at the top of the file
+// src/app/components/login/Login.tsx
 
 import React, { useState } from 'react';
-import './Login.css'; // Add your styles here or inline
 
-const Login: React.FC = () => {
-    const [username, setUsername] = useState('');
+interface LoginProps {
+    onLogin: () => void; // Prop to handle login
+}
+
+const Login: React.FC<LoginProps> = ({ onLogin }) => {
+    const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
 
-    const handleLogin = (e: React.FormEvent) => {
+    const handleSubmit = (e: React.FormEvent) => {
         e.preventDefault();
-        console.log('Login attempted with:', username, password);
-    };
-
-    const handleForgotPassword = () => {
-        console.log('Forgot password clicked');
+        onLogin(); // Call the onLogin function passed as prop
     };
 
     return (
-        <div className="login-container">
-            <form className="login-form" onSubmit={handleLogin}>
-                <h2 className="login-title">Login</h2>
-
-                <div className="input-group">
-                    <label htmlFor="username">Username</label>
-                    <input
-                        type="text"
-                        id="username"
-                        value={username}
-                        onChange={(e) => setUsername(e.target.value)}
-                        placeholder="Enter your username"
-                        required
-                    />
-                </div>
-
-                <div className="input-group">
-                    <label htmlFor="password">Password</label>
-                    <input
-                        type="password"
-                        id="password"
-                        value={password}
-                        onChange={(e) => setPassword(e.target.value)}
-                        placeholder="Enter your password"
-                        required
-                    />
-                </div>
-
-                <button type="submit" className="login-btn">
-                    Login
-                </button>
-
-                <button type="button" className="forgot-password-btn" onClick={handleForgotPassword}>
-                    Forgot Password?
-                </button>
-            </form>
-        </div>
+        <form onSubmit={handleSubmit}>
+            <div>
+                <label>Email:</label>
+                <input
+                    type="email"
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                    required
+                />
+            </div>
+            <div>
+                <label>Password:</label>
+                <input
+                    type="password"
+                    value={password}
+                    onChange={(e) => setPassword(e.target.value)}
+                    required
+                />
+            </div>
+            <button type="submit">Login</button>
+        </form>
     );
 };
 
