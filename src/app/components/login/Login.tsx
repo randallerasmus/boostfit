@@ -1,18 +1,18 @@
+"use client"; // Add this at the top of the file
+
 import React, { useState } from 'react';
 import './Login.css'; // Add your styles here or inline
 
-const Login = () => {
+const Login: React.FC = () => {
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
 
-    const handleLogin = (e) => {
+    const handleLogin = (e: React.FormEvent) => {
         e.preventDefault();
-        // Handle login logic here
         console.log('Login attempted with:', username, password);
     };
 
     const handleForgotPassword = () => {
-        // Handle forgot password logic
         console.log('Forgot password clicked');
     };
 

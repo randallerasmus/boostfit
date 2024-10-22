@@ -1,11 +1,20 @@
+/* Ensure the page takes up the full viewport height */
+html, body {
+    height: 100%;
+    margin: 0;
+    display: flex;
+    justify-content: center; /* Horizontal centering */
+    align-items: center;     /* Vertical centering */
+    background-color: #f0f0f0; /* Optional background color */
+}
+
 .login-container {
     width: 100%;
-    max-width: 400px;
-    margin: 0 auto;
-    padding: 20px;
+    max-width: 10000px; /* Increased max-width for a significantly larger container */
+    padding: 40px;     /* Padding for more space inside the container */
     background-color: white;
     border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3); /* More pronounced shadow */
     text-align: center;
 }
 
@@ -15,13 +24,13 @@
 }
 
 .login-title {
-    font-size: 24px;
-    color: #1E90FF; /* Light blue color */
-    margin-bottom: 20px;
+    font-size: 32px; /* Increased font size for the title */
+    color: #6CB9CF; /* Light blue color */
+    margin-bottom: 30px; /* Increased margin for more space below the title */
 }
 
 .input-group {
-    margin-bottom: 15px;
+    margin-bottom: 25px; /* Increased bottom margin for input groups */
 }
 
 .input-group label {
@@ -40,26 +49,26 @@
 }
 
 .login-btn {
-    background-color: #1E90FF;
+    background-color: #6CB9CF;
     color: white;
-    padding: 12px;
-    font-size: 16px;
+    padding: 15px; /* Increased padding for the button */
+    font-size: 20px; /* Increased font size for the button */
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    margin-top: 10px;
+    margin-top: 20px; /* Increased margin for more space above the button */
 }
 
 .login-btn:hover {
-    background-color: #007BFF;
+    background-color: #5BA3B2; /* Slightly darker on hover */
 }
 
 .forgot-password-btn {
     background: none;
     border: none;
-    color: #1E90FF;
-    font-size: 14px;
-    margin-top: 10px;
+    color: #6CB9CF;
+    font-size: 18px; /* Increased font size for the forgot password button */
+    margin-top: 20px; /* Increased margin for more space above the button */
     cursor: pointer;
 }
 
